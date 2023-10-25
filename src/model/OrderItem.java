@@ -10,9 +10,10 @@ public class OrderItem {
 
     }
     
-    public OrderItem(Integer quantity, Double price) {
+    public OrderItem(Integer quantity, Double price, Product product) {
         this.quantity = quantity;
         this.price = price;
+        this.product = product;
     }
 
     public Integer getQuantity() {
@@ -30,6 +31,19 @@ public class OrderItem {
 
     public Double subTotal(){
         return price * quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    @Override
+    public String toString() {
+        return getProduct().getName() + ", " + getPrice() + ", Quantity: " + getQuantity() + ", Subtotal: " + subTotal() ;
     }
 
     
